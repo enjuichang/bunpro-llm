@@ -1,0 +1,454 @@
+{
+  "troubled_grammar": [
+    {
+      "link": "/grammar_points/%E3%81%A6%E3%82%82%E3%81%84%E3%81%84",
+      "text": "てもいい",
+      "structure": {
+        "japanese": "～てもいい",
+        "meaning": "It is alright/fine/okay even if, Can/may, ~ is also okay"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%8C%E3%81%82%E3%82%8B",
+      "text": "がある",
+      "structure": {
+        "japanese": "が有る",
+        "meaning": "To be, There is"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AB%E3%81%99%E3%82%8B",
+      "text": "にする",
+      "structure": {
+        "japanese": "にする",
+        "meaning": "To decide on, To choose, To make something into, To view something as"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A6%E3%81%AF%E3%81%84%E3%81%91%E3%81%AA%E3%81%84",
+      "text": "てはいけない",
+      "structure": {
+        "japanese": "～てはいけない",
+        "meaning": "Must not, May not"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%8B%E3%82%89-because",
+      "text": "から",
+      "structure": {
+        "japanese": "から",
+        "meaning": "Because, Since"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6-conjunction",
+      "text": "なくて",
+      "structure": {
+        "japanese": "なくて (Sequence)",
+        "meaning": "To not ~ and ~, Not ~ and ~ (Conjugations)"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%9F%E3%82%8A-%E3%81%9F%E3%82%8A%E3%81%99%E3%82%8B",
+      "text": "たり～たりする",
+      "structure": {
+        "japanese": "たり～たりする",
+        "meaning": "Things like ~ and ~"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%9F%E3%81%84",
+      "text": "たい",
+      "structure": {
+        "japanese": "たい",
+        "meaning": "Want to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%9F%E3%81%BB%E3%81%86%E3%81%8C%E3%81%84%E3%81%84",
+      "text": "たほうがいい",
+      "structure": {
+        "japanese": "～た方がいい",
+        "meaning": "It'd be better to, Should do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%84%E3%81%BB%E3%81%86%E3%81%8C%E3%81%84%E3%81%84",
+      "text": "ないほうがいい",
+      "structure": {
+        "japanese": "ない方がいい",
+        "meaning": "It'd be better not to, Shouldn't do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A6%E3%81%84%E3%82%8B3",
+      "text": "ている③",
+      "structure": {
+        "japanese": "～ている ③",
+        "meaning": "Has/have done, Is ~ing (Repetition)"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A1%E3%82%83-%E3%81%AA%E3%81%8D%E3%82%83",
+      "text": "なくちゃ・なきゃ",
+      "structure": {
+        "japanese": "なくちゃ・なきゃ",
+        "meaning": "Must do, Have to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%AB%E3%81%8B-%E3%81%AA%E3%81%AB%E3%82%82",
+      "text": "なにか・なにも",
+      "structure": {
+        "japanese": "何+ か",
+        "meaning": "Something, Nothing, Anything, Not anything, Some kind of, Not any kind of"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%BE%E3%81%88%E3%81%AB",
+      "text": "まえに",
+      "structure": {
+        "japanese": "前に",
+        "meaning": "Before, In front of"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%82%E3%81%92%E3%82%8B",
+      "text": "あげる",
+      "structure": {
+        "japanese": "あげる",
+        "meaning": "To give (away), To present, To provide"
+      }
+    },
+    {
+      "link": "/grammar_points/verb-%E3%81%A6%E3%82%82%E3%81%84%E3%81%84",
+      "text": "Verb + てもいい",
+      "structure": {
+        "japanese": "～てもいい (Verb)",
+        "meaning": "It's okay to, It's alright to, Can/may"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6%E3%81%AF%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84",
+      "text": "なくてはならない",
+      "structure": {
+        "japanese": "なくてはならない",
+        "meaning": "Must do, Have to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%99%E3%81%8E%E3%82%8B",
+      "text": "すぎる",
+      "structure": {
+        "japanese": "過ぎる",
+        "meaning": "Too much, Very"
+      }
+    },
+    {
+      "link": "/grammar_points/verb-%E3%81%AB%E3%81%84%E3%81%8F",
+      "text": "Verb + にいく",
+      "structure": {
+        "japanese": "～に行く",
+        "meaning": "To go ~, To go in order to ~"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A6%E3%81%84%E3%82%8B1",
+      "text": "ている①",
+      "structure": {
+        "japanese": "～ている ①",
+        "meaning": "Is, Am, Are (~ing)"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%BE%E3%81%A0-%E3%81%A6%E3%81%84%E3%81%BE%E3%81%9B%E3%82%93",
+      "text": "まだ～ていません",
+      "structure": {
+        "japanese": "まだ～ていません",
+        "meaning": "Still haven't done (something)"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%8F%E3%82%8B",
+      "text": "くる",
+      "structure": {
+        "japanese": "来る",
+        "meaning": "To come"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%84-Adjective-%E3%81%8F%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F",
+      "text": "い-Adjective くなかった",
+      "structure": {
+        "japanese": "くなかった",
+        "meaning": "Was not, Wasn't (Adjective)"
+      }
+    },
+    {
+      "link": "/grammar_points/negative-%E3%81%84-adjectives",
+      "text": "い-Adjectives くない",
+      "structure": {
+        "japanese": "くない",
+        "meaning": "Not (Adjective)"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%82%8B-verb-past",
+      "text": "る-Verb (Past)",
+      "structure": {
+        "japanese": "る-Verb (Past)",
+        "meaning": "る - Verbs (Past tense)"
+      }
+    }
+  ],
+  "ghost_reviews": [
+    {
+      "link": "/grammar_points/%E3%81%99%E3%81%8E%E3%82%8B",
+      "text": "すぎる",
+      "structure": {
+        "japanese": "過ぎる",
+        "meaning": "Too much, Very"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%98%E3%82%83%E3%81%AA%E3%81%84",
+      "text": "じゃない",
+      "structure": {
+        "japanese": "じゃない",
+        "meaning": "Is not, Isn't"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%84%E3%81%BB%E3%81%86%E3%81%8C%E3%81%84%E3%81%84",
+      "text": "ないほうがいい",
+      "structure": {
+        "japanese": "ない方がいい",
+        "meaning": "It'd be better not to, Shouldn't do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%9F%E3%81%93%E3%81%A8%E3%81%8C%E3%81%82%E3%82%8B",
+      "text": "たことがある",
+      "structure": {
+        "japanese": "～たことがある",
+        "meaning": "Have done before"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%8C%E3%81%82%E3%82%8B",
+      "text": "がある",
+      "structure": {
+        "japanese": "が有る",
+        "meaning": "To be, There is"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A1%E3%82%83-%E3%81%AA%E3%81%8D%E3%82%83",
+      "text": "なくちゃ・なきゃ",
+      "structure": {
+        "japanese": "なくちゃ・なきゃ",
+        "meaning": "Must do, Have to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%82%E3%81%92%E3%82%8B",
+      "text": "あげる",
+      "structure": {
+        "japanese": "あげる",
+        "meaning": "To give (away), To present, To provide"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%82%82%E3%82%89%E3%81%86",
+      "text": "もらう",
+      "structure": {
+        "japanese": "貰う",
+        "meaning": "To receive, To get, To obtain"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A6%E3%81%84%E3%82%8B2",
+      "text": "ている②",
+      "structure": {
+        "japanese": "～ている ②",
+        "meaning": "State of being, Has (have) done"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6%E3%81%AF%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84",
+      "text": "なくてはならない",
+      "structure": {
+        "japanese": "なくてはならない",
+        "meaning": "Must do, Have to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6%E3%81%AF%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84",
+      "text": "なくてはならない",
+      "structure": {
+        "japanese": "なくてはならない",
+        "meaning": "Must do, Have to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A6%E3%81%AF%E3%81%84%E3%81%91%E3%81%AA%E3%81%84",
+      "text": "てはいけない",
+      "structure": {
+        "japanese": "～てはいけない",
+        "meaning": "Must not, May not"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6-conjunction",
+      "text": "なくて",
+      "structure": {
+        "japanese": "なくて (Sequence)",
+        "meaning": "To not ~ and ~, Not ~ and ~ (Conjugations)"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6%E3%81%AF%E3%81%84%E3%81%91%E3%81%AA%E3%81%84",
+      "text": "なくてはいけない",
+      "structure": {
+        "japanese": "なくてはいけない",
+        "meaning": "Must do, Have to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%9F%E3%81%93%E3%81%A8%E3%81%8C%E3%81%82%E3%82%8B",
+      "text": "たことがある",
+      "structure": {
+        "japanese": "～たことがある",
+        "meaning": "Have done before"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6%E3%81%AF%E3%81%84%E3%81%91%E3%81%AA%E3%81%84",
+      "text": "なくてはいけない",
+      "structure": {
+        "japanese": "なくてはいけない",
+        "meaning": "Must do, Have to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%9F%E3%81%93%E3%81%A8%E3%81%8C%E3%81%82%E3%82%8B",
+      "text": "たことがある",
+      "structure": {
+        "japanese": "～たことがある",
+        "meaning": "Have done before"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AB%E3%81%AA%E3%82%8B-%E3%81%8F%E3%81%AA%E3%82%8B",
+      "text": "～になる・～くなる",
+      "structure": {
+        "japanese": "になる・くなる",
+        "meaning": "To become (Adjective)"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6%E3%81%AF%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84",
+      "text": "なくてはならない",
+      "structure": {
+        "japanese": "なくてはならない",
+        "meaning": "Must do, Have to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AB%E3%81%8F%E3%81%84",
+      "text": "にくい",
+      "structure": {
+        "japanese": "にくい",
+        "meaning": "Difficult to, Hard to"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A4%E3%82%82%E3%82%8A%E3%81%A0",
+      "text": "つもりだ",
+      "structure": {
+        "japanese": "つもりだ",
+        "meaning": "To plan to, To intend to"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A6%E3%82%82%E3%81%84%E3%81%84",
+      "text": "てもいい",
+      "structure": {
+        "japanese": "～てもいい",
+        "meaning": "It is alright/fine/okay even if, Can/may, ~ is also okay"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%84%E3%81%BB%E3%81%86%E3%81%8C%E3%81%84%E3%81%84",
+      "text": "ないほうがいい",
+      "structure": {
+        "japanese": "ない方がいい",
+        "meaning": "It'd be better not to, Shouldn't do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%99%E3%81%8E%E3%82%8B",
+      "text": "すぎる",
+      "structure": {
+        "japanese": "過ぎる",
+        "meaning": "Too much, Very"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A0%E3%81%91%E3%81%A7",
+      "text": "だけで",
+      "structure": {
+        "japanese": "だけで",
+        "meaning": "Just by, Just with"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A4%E3%82%82%E3%82%8A%E3%81%A0",
+      "text": "つもりだ",
+      "structure": {
+        "japanese": "つもりだ",
+        "meaning": "To plan to, To intend to"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6",
+      "text": "なくて",
+      "structure": {
+        "japanese": "なくて (Reasons and Causes)",
+        "meaning": "Not ~ and, Not so, Because not (Examples)"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6%E3%81%AF%E3%81%84%E3%81%91%E3%81%AA%E3%81%84",
+      "text": "なくてはいけない",
+      "structure": {
+        "japanese": "なくてはいけない",
+        "meaning": "Must do, Have to do"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%A8%E3%81%84%E3%81%86%E3%81%93%E3%81%A8",
+      "text": "ということ",
+      "structure": {
+        "japanese": "と言う事",
+        "meaning": "~ing, The ~ that ~ (Nominalization)"
+      }
+    },
+    {
+      "link": "/grammar_points/%E3%81%AA%E3%81%8A%E3%81%99",
+      "text": "なおす",
+      "structure": {
+        "japanese": "直す",
+        "meaning": "To do over, To redo"
+      }
+    },
+    {
+      "link": "/grammar_points/Verb%5Bpassive%5D",
+      "text": "Verb［れる・られる］",
+      "structure": {
+        "japanese": "れる・られる (Passive)",
+        "meaning": "Was done to ~ by ~, Done without consent, Done to one's dismay"
+      }
+    }
+  ]
+}
