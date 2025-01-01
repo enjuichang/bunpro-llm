@@ -75,7 +75,7 @@ def initialize_session_state() -> None:
     """Initialize Streamlit session state with default values"""
     # Initialize session states using Pydantic model defaults
     default_state = AppState()
-    
+
     if 'bunpro_credentials_set' not in st.session_state:
         st.session_state.bunpro_credentials_set = default_state.bunpro_credentials_set
 
@@ -90,27 +90,55 @@ def setup_sidebar() -> None:
     """Setup and handle sidebar UI elements"""
     with st.sidebar:
         st.title('🤖💬 Japanese Grammar Assistant / 日本語文法アシスタント')
-        
-        # Check if credentials are in secrets
-        if not st.session_state.bunpro_credentials_set:
-            if 'bunpro' in st.secrets:
-                st.session_state.bunpro_email = st.secrets.bunpro.email
-                st.session_state.bunpro_password = st.secrets.bunpro.password
-                st.session_state.bunpro_credentials_set = True
-                st.success("Bunpro credentials loaded from secrets!")
-            else:
-                st.session_state.bunpro_email = st.text_input("Bunpro Email:", type="default")
-                st.session_state.bunpro_password = st.text_input("Bunpro Password:", type="password")
-                if st.button("Save Credentials"):
-                    if st.session_state.bunpro_email and st.session_state.bunpro_password:
-                        st.session_state.bunpro_credentials_set = True
-                        st.success("Credentials saved!")
-                    else:
-                        st.error("Please enter both email and password")
 
-        # Show refresh button only if credentials are set
-        if st.session_state.bunpro_credentials_set:
+        # Check if credentials are in secrets
+        credentials_in_secrets = (
+            'llm_creds' in st.secrets and
+            'GROQ_API_KEY' in st.secrets.llm_creds and
+            'bunpro' in st.secrets and
+            'email' in st.secrets.bunpro and
+            'password' in st.secrets.bunpro
+        )
+
+        # Load from secrets if available
+        if credentials_in_secrets and not st.session_state.get('credentials_set'):
+            st.session_state.GROQ_API_KEY = st.secrets.llm_creds.GROQ_API_KEY
+            st.session_state.bunpro_email = st.secrets.bunpro.email
+            st.session_state.bunpro_password = st.secrets.bunpro.password
+            st.session_state.credentials_set = True
+            st.session_state.bunpro_credentials_set = True
+            st.success("All credentials loaded from secrets!")
+
+        # Otherwise, show input fields
+        elif not st.session_state.get('credentials_set'):
+            with st.form("credentials_form"):
+                groq_api_key = st.text_input("Groq API Key:", type="password")
+                bunpro_email = st.text_input("Bunpro Email:", type="default")
+                bunpro_password = st.text_input("Bunpro Password:", type="password")
+
+                if st.form_submit_button("Save All Credentials"):
+                    if groq_api_key and bunpro_email and bunpro_password:
+                        st.session_state.GROQ_API_KEY = groq_api_key
+                        st.session_state.bunpro_email = bunpro_email
+                        st.session_state.bunpro_password = bunpro_password
+                        st.session_state.credentials_set = True
+                        st.session_state.bunpro_credentials_set = True
+                        st.success("All credentials saved!")
+                        st.rerun()  # Refresh the page to update UI
+                    else:
+                        st.error("Please enter all credentials")
+
+        # Show refresh button only if all credentials are set
+        if st.session_state.get('credentials_set'):
             handle_refresh_button()
+
+            # Add option to reset credentials
+            if st.button("Reset Credentials"):
+                for key in ['GROQ_API_KEY', 'bunpro_email', 'bunpro_password', 
+                          'credentials_set', 'bunpro_credentials_set']:
+                    if key in st.session_state:
+                        del st.session_state[key]
+                st.rerun()  # Refresh the page to show credential form
 
 
 def handle_refresh_button() -> None:
@@ -129,26 +157,22 @@ def handle_refresh_button() -> None:
 
 
 def initialize_llm_client() -> Optional[Groq]:
-    """
-    Initialize the LLM client with proper error handling.
-
-    Returns:
-        Optional[Groq]: Initialized Groq client or None if initialization fails
-    """
+    """Initialize the LLM client with proper error handling."""
     try:
-        # Check if GROQ_API_KEY exists in environment
-        if 'GROQ_API_KEY' not in st.secrets and not os.environ.get("GROQ_API_KEY"):
-            st.error("No Groq API key found. Please set GROQ_API_KEY in your environment or Streamlit secrets.")
+        # Check for API key in session state, secrets, or environment
+        api_key = (st.session_state.get('GROQ_API_KEY') or 
+                  st.secrets.get("llm_creds", {}).get("GROQ_API_KEY") or 
+                  os.environ.get("GROQ_API_KEY"))
+
+        if not api_key:
+            st.error("No Groq API key found. Please provide your API key in the sidebar.")
             return None
-        
-        # Use API key from Streamlit secrets if available, otherwise use environment variable
-        api_key = st.secrets.get("GROQ_API_KEY", os.environ.get("GROQ_API_KEY"))
-        
+
         # Initialize LLM client
         config = LLMConfig(api_key=SecretStr(api_key))
         client = LLMClient(config)
         return client.groq_client
-        
+
     except Exception as e:
         st.error(f"Failed to initialize LLM client: {str(e)}")
         return None

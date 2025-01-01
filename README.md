@@ -39,19 +39,26 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Create a `.env` file in the root directory:
-```sh
-GROQ_API_KEY=your_groq_api_key
-```
+4. Set up your credentials in one of these ways:
 
-5. (Optional) Create a `.streamlit/secrets.toml` file for storing credentials:
-```toml
-GROQ_API_KEY = "your_groq_api_key"
+   a. Using `.streamlit/secrets.toml`:
+   ```toml
+   [llm_creds]
+   GROQ_API_KEY = "your_groq_api_key"
 
-[bunpro]
-email = "your_bunpro_email"
-password = "your_bunpro_password"
-```
+   [bunpro]
+   email = "your_bunpro_email"
+   password = "your_bunpro_password"
+   ```
+
+   b. Using environment variables:
+   ```sh
+   export GROQ_API_KEY=your_groq_api_key
+   ```
+
+   c. Using the Streamlit interface:
+   - Enter your Groq API key in the sidebar
+   - Enter your Bunpro credentials in the sidebar
 
 ## Required Dependencies
 
@@ -71,13 +78,29 @@ python-dotenv>=0.0.1
 streamlit run streamlit_app.py
 ```
 
-2. If you haven't set up credentials in `secrets.toml`:
-   - Enter your Bunpro credentials in the sidebar
-   - Ensure your Groq API key is set in environment variables or secrets
+2. Set up your credentials in one of these ways:
 
-3. Click "Refresh Bunpro Data" to fetch your latest grammar data
+   a. Using `.streamlit/secrets.toml` (recommended):
+   ```toml
+   [llm_creds]
+   GROQ_API_KEY = "your_groq_api_key"
 
-4. Start chatting with the AI about Japanese grammar!
+   [bunpro]
+   email = "your_bunpro_email"
+   password = "your_bunpro_password"
+   ```
+
+   b. Using the Streamlit interface:
+   - Fill in all credentials in the sidebar form:
+     - Groq API Key
+     - Bunpro Email
+     - Bunpro Password
+   - Click "Save All Credentials"
+   - Use "Reset Credentials" button if you need to update them
+
+3. After credentials are set:
+   - Click "Refresh Bunpro Data" to fetch your latest grammar data
+   - Start chatting with the AI about Japanese grammar!
 
 ## Project Structure
 
@@ -114,9 +137,15 @@ bunpro-llm/
 
 ## Security Features
 
+- Unified credentials management:
+  - All credentials are set together to prevent partial states
+  - Secure password fields for sensitive information
+  - Option to reset all credentials when needed
 - Credentials handled securely using Pydantic's SecretStr
-- Environment variables and Streamlit secrets for API keys
-- Session-based authentication with Bunpro
+- Multiple configuration options:
+  - Streamlit secrets (recommended)
+  - Secure input form
+- Session-based authentication
 - No permanent storage of sensitive data
 
 ## Contributing
