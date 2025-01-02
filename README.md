@@ -2,6 +2,9 @@
 
 A Streamlit-powered Japanese grammar assistant that leverages your Bunpro account data and LLM technology to provide personalized Japanese grammar explanations and assistance.
 
+## Demo Link
+A [streamlit app](https://bunpro-llm.streamlit.app/)
+
 ## Features
 
 - 🔐 Secure Bunpro account integration
