@@ -58,17 +58,13 @@ class BunproClient:
         # Set the default data file path
         self.data_file = 'bunpro_data.json'
 
-    def login(self) -> bool:
+    def login(self) -> tuple[bool, str]:
         """
         Authenticate with Bunpro using provided credentials.
 
         Returns:
-            bool: True if login successful, False otherwise
-
-        Raises:
-            requests.RequestException: If there's an error connecting to Bunpro
+            tuple[bool, str]: (success status, error message if any)
         """
-        # Bunpro login endpoint
         login_page_url = "https://bunpro.jp/users/sign_in"
 
         try:
@@ -92,24 +88,33 @@ class BunproClient:
 
             # Attempt to log in
             login_response = self.session.post(login_page_url, data=login_data)
-            return login_response.status_code == 200
+            
+            # Parse response for error messages
+            error_soup = BeautifulSoup(login_response.text, 'html.parser')
+            
+            # Find the errors container and check for the alert message
+            errors_div = error_soup.find('div', {'class': 'errors'})
+            if errors_div:
+                alert_div = errors_div.find('div', {'class': 'alert'})
+                if alert_div and "Invalid Email or password." in alert_div.text:
+                    return False, "Invalid email or password. Please check your Bunpro credentials."
+            
+            if login_response.status_code != 200:
+                return False, f"Login failed with status code: {login_response.status_code}"
+            
+            return True, ""
 
         except requests.RequestException as e:
-            print(f"Login failed: {e}")
-            return False
+            return False, f"Connection error: {str(e)}"
+        except Exception as e:
+            return False, f"Unexpected error during login: {str(e)}"
 
-    def fetch_grammar_data(self) -> bool:
+    def fetch_grammar_data(self) -> tuple[bool, str]:
         """
         Fetch and save grammar data from the user's profile.
 
-        This method retrieves troubled grammar points and ghost reviews,
-        then saves them to a JSON file.
-
         Returns:
-            bool: True if data was successfully fetched and saved, False otherwise
-
-        Raises:
-            requests.RequestException: If there's an error fetching the data
+            tuple[bool, str]: (success status, error message)
         """
         # URL for the user's grammar stats
         stats_url = "https://bunpro.jp/user/profile/stats"
@@ -118,6 +123,9 @@ class BunproClient:
             # Fetch the stats page
             stats_response = self.session.get(stats_url)
             stats_response.raise_for_status()
+            # Check if we're redirected to login page (session expired or not logged in)
+            if "sign_in" in stats_response.url.lower():
+                return False, "Login required. Please check your credentials."
 
             if stats_response.status_code == 200:
                 # Parse the grammar sections from the response
@@ -130,29 +138,33 @@ class BunproClient:
                 # Save the results to a file
                 with open(self.data_file, 'w', encoding='utf-8') as f:
                     json.dump(detailed_result, f, indent=2, ensure_ascii=False)
-                return True
-            return False
+                return True, "Successfully fetched grammar data!"
+            
+            return False, f"Failed to fetch data: HTTP {stats_response.status_code}"
 
         except requests.RequestException as e:
-            print(f"Failed to fetch grammar data: {e}")
-            return False
+            return False, f"Connection error: {str(e)}"
         except Exception as e:
-            print(f"Error processing grammar data: {e}")
-            return False
+            return False, f"Error processing grammar data: {str(e)}"
 
-    def update_grammar_data(self) -> bool:
+    def update_grammar_data(self) -> tuple[bool, str]:
         """
         Login and update the grammar data.
 
-        This is the main method to call for updating grammar data.
-        It handles both authentication and data fetching.
-
         Returns:
-            bool: True if the update was successful, False otherwise
+            tuple[bool, str]: (success status, error message if any)
         """
-        if self.login():
-            return self.fetch_grammar_data()
-        return False
+        # First try to login
+        success, error_msg = self.login()
+        if not success:
+            return False, f"Login failed: {error_msg}"
+        
+        # Then try to fetch data
+        success, fetch_msg = self.fetch_grammar_data()
+        if not success:
+            return False, fetch_msg
+        
+        return True, "Successfully updated Bunpro data!"
 
 
 if __name__ == "__main__":
