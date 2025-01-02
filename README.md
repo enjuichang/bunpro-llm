@@ -3,7 +3,7 @@
 A Streamlit-powered Japanese grammar assistant that leverages your Bunpro account data and LLM technology to provide personalized Japanese grammar explanations and assistance.
 
 ## Demo Link
-A [streamlit app](https://bunpro-llm.streamlit.app/)
+A [streamlit app](https://bunpro-llm.streamlit.app/) for testing purposes.
 
 ## Features
 
